@@ -6,12 +6,12 @@ String userErrorToJson(UserError data) => json.encode(data.toJson());
 
 class UserError {
   UserError({
-    required this.code,
-    required this.message,
+    this.code,
+    this.message,
   });
 
-  int code;
-  String message;
+  int? code;
+  String? message;
 
   factory UserError.fromJson(Map<String, dynamic> json) => UserError(
     code: json["code"] == null ? null : json["code"],
